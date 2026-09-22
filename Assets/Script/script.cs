@@ -64,5 +64,26 @@ public class script : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collided with: " + collision.gameObject.name);
+
+        var gt = collision.gameObject.GetComponent<GroundTag>();
+
+        if (gt != null)
+        {
+            Debug.Log("GameOver");
+
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        }
+
+        // if (collision.gameObject.TryGetComponent<GroundTag>(out var groundTag))
+        // {
+        //     Debug.Log("GameOver");
+
+        //     #if UNITY_EDITOR
+        //     UnityEditor.EditorApplication.isPlaying = false;
+        //     #endif
+        // }
+
     }
 }
