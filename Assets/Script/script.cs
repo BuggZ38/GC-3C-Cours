@@ -46,6 +46,7 @@ public class script : MonoBehaviour
     void Update()
     {
         _isGrounded = Physics.Raycast(_footPosition.transform.position, Vector3.down, _jumpRaycastDistance);
+        Debug.DrawRay(_footPosition.transform.position, Vector3.down * _jumpRaycastDistance, Color.red);
 
         Vector2 direction = _moveInput.action.ReadValue<Vector2>();
 
@@ -53,7 +54,6 @@ public class script : MonoBehaviour
 
         transform.Translate(moveDirection * (_speed * Time.deltaTime));
 
-        Debug.DrawRay(_footPosition.transform.position, Vector3.down * _jumpRaycastDistance, Color.red);
 
         if (_jumpInput.action.WasPressedThisFrame() && _isGrounded)
         {
@@ -61,20 +61,20 @@ public class script : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Collided with: " + collision.gameObject.name);
+    // void OnCollisionEnter(Collision collision)
+    // {
+    //     Debug.Log("Collided with: " + collision.gameObject.name);
 
-        var gt = collision.gameObject.GetComponent<GroundTag>();
+    //     var gt = collision.gameObject.GetComponent<GroundTag>();
 
-        if (gt != null)
-        {
-            Debug.Log("GameOver");
+    //     if (gt != null)
+    //     {
+    //         Debug.Log("GameOver");
 
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            #endif
-        }
+    //         #if UNITY_EDITOR
+    //         UnityEditor.EditorApplication.isPlaying = false;
+    //         #endif
+    //     }
 
         // if (collision.gameObject.TryGetComponent<GroundTag>(out var groundTag))
         // {
@@ -85,5 +85,5 @@ public class script : MonoBehaviour
         //     #endif
         // }
 
-    }
+    // }
 }

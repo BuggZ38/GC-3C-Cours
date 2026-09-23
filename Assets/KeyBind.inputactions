@@ -27,7 +27,7 @@
                     "priority": 0
                 },
                 {
-                    "name": "feur",
+                    "name": "MouseXY",
                     "type": "Value",
                     "id": "772b1afb-ec0a-4b67-8373-d86aa3d4de13",
                     "expectedControlType": "Vector2",
@@ -133,7 +133,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "feur",
+                    "action": "MouseXY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -144,7 +144,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "feur",
+                    "action": "MouseXY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
