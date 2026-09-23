@@ -76,14 +76,14 @@ public class script : MonoBehaviour
     //         #endif
     //     }
 
-        // if (collision.gameObject.TryGetComponent<GroundTag>(out var groundTag))
-        // {
-        //     Debug.Log("GameOver");
+    //     // if (collision.gameObject.TryGetComponent<GroundTag>(out var groundTag))
+    //     // {
+    //     //     Debug.Log("GameOver");
 
-        //     #if UNITY_EDITOR
-        //     UnityEditor.EditorApplication.isPlaying = false;
-        //     #endif
-        // }
+    //     //     #if UNITY_EDITOR
+    //     //     UnityEditor.EditorApplication.isPlaying = false;
+    //     //     #endif
+    //     // }
 
     // }
 }

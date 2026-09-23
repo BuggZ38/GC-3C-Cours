@@ -138,15 +138,59 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "4669aedb-f3fc-4e85-95fd-350e943ae47f",
-                    "path": "<Mouse>/delta",
+                    "name": "2D Vector",
+                    "id": "81ab39d4-7963-4f34-95a2-41befbc78a4b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseXY",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "abc70d27-f17a-4a24-a64c-be092cd9ca90",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "MouseXY",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "6be79803-e6d8-4ac6-8518-8a931efc9ef7",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseXY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "70d399a7-88c9-487b-9dd2-a3a2d966266d",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseXY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c484ac33-953b-4b3e-a309-ec8d9d9246ca",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseXY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
