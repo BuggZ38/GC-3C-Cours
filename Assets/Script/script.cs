@@ -36,6 +36,7 @@ public class script : MonoBehaviour
     public event Action<int> OnDamaged;
 
 
+
     // Camera variables
     Vector3 _cameraDirection;
 
@@ -69,8 +70,16 @@ public class script : MonoBehaviour
         // event started : au debut de l'action
         // event performed : au changement de l'action
         // event canceled : a la fin de l'action
+        _moveInput.action.started += UpdateMove;
         _moveInput.action.performed += UpdateMove;
         _moveInput.action.canceled += StopMove;
+    }
+
+    void OnDestroy()
+    {
+        _moveInput.action.started -= UpdateMove;
+        _moveInput.action.performed -= UpdateMove;
+        _moveInput.action.canceled -= StopMove;
     }
 
     void UpdateMove(InputAction.CallbackContext context)
@@ -107,6 +116,7 @@ public class script : MonoBehaviour
         // Jump
         if (_jumpInput.action.WasPressedThisFrame() && _isGrounded)
         {
+            
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }
     }
