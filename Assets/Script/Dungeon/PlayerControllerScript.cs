@@ -43,6 +43,8 @@ public class PlayerControllerScript : MonoBehaviour
 
     public event Action EIsDead;
 
+    public event Action EOnJump;
+
 
     public event Action<int> OnDamaged;
 
@@ -140,6 +142,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (_jumpInput.action.WasPressedThisFrame() && _isGrounded)
         {
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            EOnJump?.Invoke();
         }
     }
 
