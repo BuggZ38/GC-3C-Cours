@@ -22,8 +22,9 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField] Rigidbody _rb;
     [SerializeField] GameObject _footPosition;
     [SerializeField] GameObject _playerModel;
+    [SerializeField] GameObject _playerTransform;
+    [SerializeField] capsuleCollideScript _capsuleCollider;
 
-    [SerializeField] CinemachineCamera _cinemachineCamera;
 
     // Personnal variables
     [ShowNonSerializedField] bool _isGrounded;
@@ -74,6 +75,8 @@ public class PlayerControllerScript : MonoBehaviour
 
         _sprintInput.action.started += StartSprint;
         _sprintInput.action.canceled += StopSprint;
+
+        _capsuleCollider.OnCollided += OnCollided;
     }
 
     void OnDestroy()
@@ -84,6 +87,9 @@ public class PlayerControllerScript : MonoBehaviour
 
         _sprintInput.action.started -= StartSprint;
         _sprintInput.action.canceled -= StopSprint;
+
+        _capsuleCollider.OnCollided -= OnCollided;
+
     }
 
     void UpdateMove(InputAction.CallbackContext context)
@@ -118,7 +124,7 @@ public class PlayerControllerScript : MonoBehaviour
         Debug.DrawRay(_footPosition.transform.position, Vector3.down * _jumpRaycastDistance, Color.red);
 
         // Move
-        transform.Translate(_direction * (_speed * Time.deltaTime));
+        _playerTransform.transform.Translate(_direction * (_speed * Time.deltaTime));
 
         if (_playerModel != null && _direction.sqrMagnitude > 0f)
         {
@@ -137,7 +143,7 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnCollided(Collision col)
     {
         Debug.Log("Collied with: " + col.gameObject.name);
 
