@@ -4962,8 +4962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fbc04140173634a9c8ea52a855a07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _player: {fileID: 1009704728}
   _playerscript: {fileID: 619414025}
   _jumpVFX: {fileID: 8547867254204328264, guid: cf378989e15716e40a61692dcd97e628, type: 3}
+  _sprintVFX: {fileID: 8764043878647920493, guid: c4ed38c72957f2241ad144a1614956d9, type: 3}
 --- !u!4 &620811403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e1fb0398d3197e04797a15aec0c9fdd1, type: 3}
@@ -5728,11 +5730,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3897378b5681ef84786c429847b51d6d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9619746
+      value: -2.9619753
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3897378b5681ef84786c429847b51d6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.0020657
+      value: -2.0020657
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3897378b5681ef84786c429847b51d6d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8196,6 +8198,7 @@ GameObject:
   - component: {fileID: 958876152}
   - component: {fileID: 958876150}
   - component: {fileID: 958876154}
+  - component: {fileID: 958876155}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -8285,6 +8288,85 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::capsuleCollideScript
   _capsuleCollider: {fileID: 958876150}
+--- !u!95 &958876155
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958876148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &962420484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 962420486}
+  - component: {fileID: 962420485}
+  m_Layer: 0
+  m_Name: Cinematic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &962420485
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962420484}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: b3e7b971cce873d4d92ff0b9d713a84a, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 0}
+    value: {fileID: 1215554511}
+  - key: {fileID: -6354222070836802164, guid: 7f2ce50e72cf9c14bb79431efd850bbe, type: 2}
+    value: {fileID: 1215554511}
+  - key: {fileID: 6243904063191886090, guid: 7f2ce50e72cf9c14bb79431efd850bbe, type: 2}
+    value: {fileID: 1215554511}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &962420486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962420484}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6002, y: 0.07502, z: -33.71142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &962762234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19619,3 +19701,4 @@ SceneRoots:
   - {fileID: 1283873341}
   - {fileID: 265040468}
   - {fileID: 1610640184}
+  - {fileID: 962420486}
